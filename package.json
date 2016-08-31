@@ -47,7 +47,7 @@
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
-    "redux": "^3.5.2",
+    "redux": "^3.5.2"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
