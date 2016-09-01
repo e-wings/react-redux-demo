@@ -17,7 +17,7 @@ import Footer from '../components/Footer'
 
 class App extends Component {
   render() {
-    // 5) 通过调用 connect(), 获得dispatch方法, 和需要的state
+    // 7) 通过调用 connect(), 获得dispatch方法, 和需要的state
     // 如果要得到部分state, 则在这里标出,并在select方法中实现对全局state的筛选(见下方)
     const { dispatch, visibleTodos, visibilityFilter } = this.props
     return (
@@ -27,7 +27,7 @@ class App extends Component {
             dispatch(addTodo(text))
           } />
         <TodoList
-          { /* 9) 把得到的state以props的形式传入子组件*/ }
+          { /* 8) 把得到的state以props的形式传入子组件*/ }
           todos={visibleTodos}
           onTodoClick={index =>
             dispatch(completeTodo(index))
@@ -60,7 +60,7 @@ App.propTypes = {
 }
 
 /**
- * 8) 根据footer中的条件,对列表进行筛选
+ * 根据footer中的条件,对列表进行筛选
  * @param todos
  * @param filter
  * @returns {*}
@@ -76,7 +76,7 @@ function selectTodos(todos, filter) {
   }
 }
 
-// 7) 基于全局 state ，得到那些我们需要的state
+// 5) 基于全局 state ，得到那些我们需要的state
 // 注意：使用 https://github.com/reactjs/reselect 效果更佳。
 // state.todos - 全局state中todos的部分
 // state.visibilityFilter - 字符串, 用于保存来自Footer的筛选条件: 全部,已完成,未完成
