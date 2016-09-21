@@ -26,8 +26,8 @@ class App extends Component {
           onAddClick={text =>
             dispatch(addTodo(text))
           } />
+        { /* 8) 把得到的state以props的形式传入子组件*/ }
         <TodoList
-          { /* 8) 把得到的state以props的形式传入子组件*/ }
           todos={visibleTodos}
           onTodoClick={index =>
             dispatch(completeTodo(index))
